@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonfrogs</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .bar button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .bio-section,
+        .projects-section,
+        .contact-section {
+            display: none;
+            text-align: left;
+            padding: 20px;
+        }
+
+        /* Style the links */
+        .projects-section a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .projects-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Moonfrogs</h1>
+        <p>hello i'm katie and welcome to my website</p>
+    </div>
+
+    <div class="bar">
+        <button>bio</button>
+        <button>projects</button>
+        <button>contact me</button>
+    </div>
+
+    <div class="bio-section">
+        <h1>hey</h1>
+        <p>i'm moonfrogs</p>
+    </div>
+    <div class="projects-section">
+        <h1>coding projects</h1>
+        <a href="https://github.com/moon-frogs">github</a>
+        <a href="">others</a>
+    </div>
+    <div class="contact-section">
+        <h3>email</h3>
+        <p>030-kmctavish@sd43.bc.ca</p>
+        <h3>discord</h3>
+        <p>moonfrogs</p>
+    </div>
+
+    <script>
+        // Add an event listener to the buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.bar button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const sectionToShow = this.innerText.toLowerCase().replace(' ', '-');
+                    hideAllSections();
+                    document.querySelector(`.${sectionToShow}-section`).style.display = 'block';
+                });
+            });
+            
+            // Function to hide all sections
+            function hideAllSections() {
+                const sections = document.querySelectorAll('div[class$="-section"]');
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
