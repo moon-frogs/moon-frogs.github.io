@@ -5,42 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonfrogs</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            padding: 0;
+            background-color: #f9f9f9;
         }
 
         .title {
-            background-color: #f0f0f0;
-            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .bar {
+            margin: 20px 0;
         }
 
         .bar button {
-            margin: 10px;
+            margin: 0 10px;
             padding: 10px 20px;
             font-size: 16px;
+            cursor: pointer;
+            background-color: #87CEEB;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
 
-        .bio-section,
-        .projects-section,
-        .contact-section {
+        .bar button:hover {
+            background-color: #000080;
+        }
+
+        .section {
             display: none;
-            text-align: left;
-            padding: 20px;
         }
 
-        /* Style the links */
-        .projects-section a {
+        .section.active {
             display: block;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: #333;
         }
 
-        .projects-section a:hover {
+        .contact h3 {
+            margin-top: 20px;
+        }
+
+        /* Additional Styling for Vibrant Colors */
+        .bio {
+            background-color: #20B2AA;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .projects {
+            background-color: #20B2AA;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact {
+            background-color: #20B2AA;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section h1, .section p {
+            color: white;
+        }
+
+        .section a {
+            color: #FFC107;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .section a:hover {
             text-decoration: underline;
         }
     </style>
@@ -48,51 +85,39 @@
 <body>
     <div class="title">
         <h1>Moonfrogs</h1>
-        <p>hello i'm katie and welcome to my website</p>
+        <p>Hello, I'm Katie. Welcome to my website.</p>
     </div>
 
     <div class="bar">
-        <button>bio</button>
-        <button>projects</button>
-        <button>contact me</button>
+        <button onclick="showSection('bio')">Bio</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('contact')">Contact Me</button>
     </div>
 
-    <div class="bio-section">
-        <h1>hey</h1>
-        <p>i'm moonfrogs</p>
+    <div class="section bio active">
+        <h1>Hey</h1>
+        <p>I'm Moonfrogs</p>
     </div>
-    <div class="projects-section">
-        <h1>coding projects</h1>
-        <a href="https://github.com/moon-frogs">github</a>
-        <a href="">others</a>
+    
+    <div class="section projects">
+        <h1>Coding Projects</h1>
+        <a href="https://github.com/moon-frogs">GitHub</a>
+        <a href="#">Others</a>
     </div>
-    <div class="contact-section">
-        <h3>email</h3>
+
+    <div class="section contact">
+        <h3>Email</h3>
         <p>030-kmctavish@sd43.bc.ca</p>
-        <h3>discord</h3>
+        <h3>Discord</h3>
         <p>moonfrogs</p>
     </div>
 
     <script>
-        // Add an event listener to the buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.bar button');
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const sectionToShow = this.innerText.toLowerCase().replace(' ', '-');
-                    hideAllSections();
-                    document.querySelector(`.${sectionToShow}-section`).style.display = 'block';
-                });
-            });
-            
-            // Function to hide all sections
-            function hideAllSections() {
-                const sections = document.querySelectorAll('div[class$="-section"]');
-                sections.forEach(section => {
-                    section.style.display = 'none';
-                });
-            }
-        });
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.remove('active'));
+            document.querySelector(`.${section}`).classList.add('active');
+        }
     </script>
 </body>
 </html>
