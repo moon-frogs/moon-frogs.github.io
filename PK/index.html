@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="intro">
+
+    </div>
+
+    <div id="travel">
+
+    </div>
+
+    <div id="battle">
+        <div id="opp">
+            <div id="oppFloat1">
+            <h3 id="oppName"></h3>
+            <p id="oppLevel"></p>
+        </div>
+            <progress id="oppBar" value="100" max="100"></progress>
+            <p id="oppHealth"></p>
+            <div >
+                <img width="150px" height="150px" src="pikachu.png" id="oppImg">
+            </div>
+        </div>
+        <div id="bPlayer">
+            <div>
+                <img width="150px" height="150px" src="eevee.png" id="bImg">
+            </div>
+            <h3 id="bName">eevee</h3>
+            <p id="bLevel">level: 6</p>
+            <progress id="bBar" value="100"></progress>
+            <p id="bHealth">12/12</p>
+        </div>
+        <div id="BUI">
+                <button id="b1" class="bButton" onclick="buttons(0)">fight</button>
+                <button id="b2" class="bButton" onclick="buttons(1)">pokemon</button>
+                <button id="b3" class="bButton" onclick="buttons(2)">bag</button>
+                <button id="b4" class="bButton" onclick="buttons(3)">run</button>
+        </div>
+    </div>
+
+    <div id="temp">
+        <button onclick="tempRender()">render</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
