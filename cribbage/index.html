@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cribbage</title>
+</head>
+<body>
+    <div id="start">
+        <h1>Cribbage with Papa!</h1>
+        <button onclick="userSelect(1)">K</button>
+        <button onclick="userSelect(2)">Papa</button>
+    </div>
+    <div id="host">
+        <input type="text" id="textBox">
+        <button onclick="connect()" id="connButton">connect!</button>
+    </div>
+
+    <div id="client">
+        <h1 id="displayID"></h1>
+    </div>
+
+    <div id="startCard">
+        <button onclick="drawOne()" id="SCButton">pick card</button>
+        <p>your card:</p>
+        <h1 id="startingCard"></h1>
+        <p>oppenents card:</p>
+        <h1 id="SCoppenentsCard"></h1>
+        <h1 id="SCInfo"></h1>
+    </div>
+
+    <div id="cribBoard">
+
+
+    </div>
+
+    <p id="credits">made by katie mctavish</p>
+
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
